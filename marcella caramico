@@ -1,0 +1,52 @@
+use prova_22c;
+
+CREATE TABLE clientes (
+    ID_cliente int,
+    Nome varchar(255),
+    Email varchar(255),
+    telefone varchar(255)
+);
+
+INSERT INTO cliente (ID_cliente, Nome, Email, telefone)
+VALUES ('1', 'Alice souza', 'alice.souza@example.com', '11999998888');
+
+INSERT INTO cliente (ID_cliente, Nome, Email, telefone)
+VALUES ('2', 'Bruno Lima', 'Bruno.lima@example.com', '11988887777');
+
+INSERT INTO cliente (ID_cliente, Nome, Email, telefone)
+VALUES ('3', 'Carla Santos', 'carla.santos@example.com', '11977776666');
+
+INSERT INTO cliente (ID_cliente, Nome, Email, telefone)
+VALUES ('4', 'Daniela Oliveira', 'daniela.oliveira@example.com', '11955554444');
+
+INSERT INTO cliente (ID_cliente, Nome, Email, telefone)
+VALUES ('5', 'Eduardo pereira', 'Eduardo.pereira@example.com', '11955554444');
+
+CREATE TABLE pedidos (
+ ID_pedido int,
+  ID_cliente int,
+data_pedido varchar(255),
+	total varchar(255)
+    );
+    
+    INSERT INTO pedidos (ID_pedido, ID_cliente, data_pedido, total)
+VALUES ('1', '1', '2024-08-01', '250.00');
+
+    INSERT INTO pedidos (ID_pedido, ID_cliente, data_pedido, total)
+VALUES ('2', '2', '2024-08-03', '150.00');
+
+    INSERT INTO pedidos (ID_pedido, ID_cliente, data_pedido, total)
+VALUES ('3', '3', '2024-08-05', '300.00');
+
+    INSERT INTO pedidos (ID_pedido, ID_cliente, data_pedido, total)
+VALUES ('4', '4', '2024-08-07', '450.00');
+
+    INSERT INTO pedidos (ID_pedido, ID_cliente, data_pedido, total)
+VALUES ('5', '5', '2024-08-09', '200.00');
+
+Select c.nome, SUM(p.total) AS
+total_pedidos
+From clientes c
+Join pedidos p ON c.ID_cliente =
+p.ID_cliente
+WHERE p.Data_pedidos=
